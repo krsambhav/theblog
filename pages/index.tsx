@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <meta name="description" content="the Blog" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="w-screen h-screen flex flex-col items-center justify-center">
+      <main className="w-screen flex flex-col items-center justify-center px-[300px]">
       <NavBar />
         {/* Hello World */}
       </main>
