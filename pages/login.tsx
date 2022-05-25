@@ -14,8 +14,8 @@ export default function login() {
           <div className="hello-container text-xl font-normal font-[poppins]">
             Hello Again!
           </div>
-          <div className="hello-container text-md font-light font-[poppins]">
-            Welcome Back!
+          <div className="hello-container text-sm font-light font-[poppins] mt-3">
+            currently restricted for admin only
           </div>
           <input
             type="text"
