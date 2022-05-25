@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { HiOutlineBookOpen } from "react-icons/hi";
 
-export default function Post({
+export default function PostCard({
   firstPost,
   banner,
   title,

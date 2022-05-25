@@ -3,10 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import Post from "../components/Post";
 import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { ClimbingBoxLoader } from "react-spinners";
+import PostCard from "../components/PostCard";
 
 const Home: NextPage = () => {
   const [postData, setPostData] = useState<any>([]);
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       <main className="w-[90vw] md:w-[800px] flex flex-row flex-wrap justify-center items-center mt-10 gap-10 mb-[100px]">
         {!contentLoaded && <ClimbingBoxLoader size={15} />}
         {postData.map((post:any, index:number) => {
-          return <Post
+          return <PostCard
             banner={post.banner}
             title={post.title}
             description={post.description}
