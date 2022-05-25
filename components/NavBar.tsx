@@ -6,10 +6,13 @@ import { BsFilePost, BsPerson } from "react-icons/bs";
 import { FiLogIn } from "react-icons/fi";
 import { CgMenuMotion } from "react-icons/cg";
 import Link from "next/link";
+import { Slant as Hamburger, Slant, Squeeze } from "hamburger-react";
+import { useState } from "react";
 
 export default function NavBar() {
+  const [isOpen, setOpen] = useState(false);
   return (
-    <div className="w-[90vw] md:w-[800px] flex flex-row items-center justify-between">
+    <div className="w-[85vw] md:w-[800px] flex flex-row items-center justify-between">
       <div className="logo-container">
         <Link href={"/"}>
           <a>
@@ -18,7 +21,28 @@ export default function NavBar() {
         </Link>
       </div>
       <div className="nav-btns-container flex flex-row items-center">
-        <CgMenuMotion className="md:hidden w-8 h-8" />
+        <div className="md:hidden w-8 h-8 z-20">
+          <Squeeze
+            toggled={isOpen}
+            toggle={setOpen}
+            color={isOpen === true ? "black" : "black"}
+          />
+        </div>
+
+          <div className={`fixed bg-white w-screen h-screen top-0 left-0 z-10 transition-all flex flex-col items-center gap-10 text-2xl pt-32 ${isOpen === true ? 'menu-mobile' : 'hidden'}`}>
+            <Link href={"/"}>
+              <a>
+                <NavButton text={"Home"} icon={<GoHome />} />
+              </a>
+            </Link>
+            <NavButton text={"Posts"} icon={<BsFilePost />} />
+            <Link href={"/contact"}>
+              <a>
+                <NavButton text={"Contact"} icon={<BsPerson />} />
+              </a>
+            </Link>
+          </div>
+
         <Link href={"/"}>
           <a>
             <NavButton text={"Home"} icon={<GoHome />} onlyPC={true} />
@@ -28,8 +52,8 @@ export default function NavBar() {
         <NavButton text={"Posts"} icon={<BsFilePost />} onlyPC={true} />
         <Link href={"/contact"}>
           <a>
-        <NavButton text={"Contact"} icon={<BsPerson />} onlyPC={true} />
-        </a>
+            <NavButton text={"Contact"} icon={<BsPerson />} onlyPC={true} />
+          </a>
         </Link>
         <Link href="/login">
           <a>

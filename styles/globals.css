@@ -36,3 +36,18 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #000; 
 }
+
+.menu-mobile{
+  animation-name: openmenu;
+  animation-duration: .3s;
+  display:flex;
+}
+
+@keyframes openmenu{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:100;
+  }
+}
