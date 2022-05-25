@@ -40,7 +40,7 @@ const Home: NextPage = () => {
           />;
         })}
       </main>
-      <Footer />
+      {contentLoaded && <Footer />}
     </div>
   );
 };
