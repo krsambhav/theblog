@@ -10,7 +10,7 @@ export default function Post() {
         <title>Login</title>
       </Head>
       <NavBar />
-      <main className="w-[90vw] md:w-[800px] flex flex-col mt-10 gap-5 mb-[100px]">
+      {/* <main className="w-[90vw] md:w-[800px] flex flex-col mt-10 gap-5 mb-[100px]">
         <div className="post-banner">
           <Image src={'https://res.cloudinary.com/demo/image/fetch/https://techcrunch.com/wp-content/uploads/2019/06/MongoDB_Logo_FullColorBlack_RGB.png'} layout='responsive' height={26} width={100} />
         </div>
@@ -40,7 +40,7 @@ export default function Post() {
             delivery and support process era.
           </div>
         </div>
-      </main>
+      </main> */}
     </div>
   );
 }
