@@ -26,7 +26,11 @@ export default function NavBar() {
         </Link>
 
         <NavButton text={"Posts"} icon={<BsFilePost />} onlyPC={true} />
+        <Link href={"/contact"}>
+          <a>
         <NavButton text={"Contact"} icon={<BsPerson />} onlyPC={true} />
+        </a>
+        </Link>
         <Link href="/login">
           <a>
             <NavButton icon={<FiLogIn className="h-[20px]" />} onlyPC={true} />

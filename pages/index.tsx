@@ -19,10 +19,35 @@ const Home: NextPage = () => {
         />
       </Head>
       <NavBar />
-      <main className="w-[90vw] md:w-[800px] flex flex-col items-center mt-10 gap-5 mb-[100px]" >
-        <Post />
-        <Post />
-        <Post />
+      <main className="w-[90vw] md:w-[800px] flex flex-row flex-wrap justify-center items-center mt-10 gap-10 mb-[100px]">
+        <Post
+          firstPost={true}
+          banner={
+            "https://res.cloudinary.com/demo/image/fetch/https://pbs.twimg.com/profile_images/1452637606559326217/GFz_P-5e_400x400.png"
+          }
+          title={"Integrating MongoDB With NextJS"}
+          description={
+            "In this blog, I write about how I integrated MongoDB inside my chat application made using NextJS."
+          }
+        />
+        <Post
+          banner={
+            "https://res.cloudinary.com/demo/image/fetch/https://firebase.google.com/images/brand-guidelines/logo-logomark.png"
+          }
+          title={"Integrating Firebase With NextJS"}
+          description={
+            "In this blog, I write about how I integrated Firebase inside my chat application made using NextJS."
+          }
+        />
+        <Post
+          banner={
+            "https://res.cloudinary.com/demo/image/fetch/https://avatars.githubusercontent.com/u/739550?s=200&v=4"
+          }
+          title={"Integrating Pusher With NextJS"}
+          description={
+            "In this blog, I write about how I integrated Pusher inside my chat application made using NextJS."
+          }
+        />
       </main>
       <Footer />
     </div>
