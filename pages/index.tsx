@@ -6,13 +6,15 @@ import NavBar from "../components/NavBar";
 import Post from "../components/Post";
 import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
+import { ClimbingBoxLoader } from "react-spinners";
 
 const Home: NextPage = () => {
   const [postData, setPostData] = useState<any>([]);
+  const [contentLoaded, setContentLoaded] = useState<boolean>(false);
   useEffect(() => {
     fetch("/api/posts")
       .then((res) => res.json())
-      .then((data) => setPostData(data));
+      .then((data) => setPostData(data)).then(() => setContentLoaded(true));
   }, []);
   return (
     <div className="w-screen flex flex-col items-center justify-center">
@@ -27,6 +29,7 @@ const Home: NextPage = () => {
       </Head>
       <NavBar />
       <main className="w-[90vw] md:w-[800px] flex flex-row flex-wrap justify-center items-center mt-10 gap-10 mb-[100px]">
+        {!contentLoaded && <ClimbingBoxLoader size={15} />}
         {postData.map((post:any, index:number) => {
           return <Post
             banner={post.banner}
