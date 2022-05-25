@@ -22,10 +22,10 @@ const Home: NextPage = () => {
         <title>the Blog</title>
         <meta name="description" content="the Blog" />
         <link rel="icon" href="/favicon.ico" />
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@0,200;0,300;0,400;1,200;1,300&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap"
           rel="stylesheet"
-        />
+        /> */}
       </Head>
       <NavBar />
       <main className="w-[90vw] md:w-[800px] flex flex-row flex-wrap justify-center items-center mt-10 gap-10 mb-[100px]">
