@@ -13,7 +13,7 @@ export default function Post({
   description:string;
 }) {
   return firstPost == true ? (
-    <div className="post-main-container w-full md:w-[90%] h-fit md:h-[300px] flex flex-col items-center justify-center md:flex-row border-[.1px] border-black p-5 md:p-10 transition-all duration-200 hover-shadow">
+    <div className="post-main-container w-full md:w-[90%] h-fit md:h-[300px] flex flex-col items-center justify-center md:flex-row border-[.1px] border-black p-5 md:p-10 transition-all duration-200 hover-shadow cursor-pointer">
       <div className="post-image-container w-[50vw] md:w-[500px]">
         <Image
           src={banner}
@@ -29,9 +29,9 @@ export default function Post({
         <div className="post-description-container font-light mt-2 md:mt-5">
           {description}
         </div>
-        <div className="post-btns container w-[80px] h-[35px] border-[.1px] border-black mt-5 hidden md:flex flex-row justify-center items-center self-end box-shadow-unhover transition-all duration-200 cursor-pointer hover:bg-black hover:text-white">
+        {/* <div className="post-btns container w-[80px] h-[35px] border-[.1px] border-black mt-5 hidden md:flex flex-row justify-center items-center self-end box-shadow-unhover transition-all duration-200 cursor-pointer hover:bg-black hover:text-white">
           <HiOutlineBookOpen className="" />
-        </div>
+        </div> */}
       </div>
     </div>
   ) : (
