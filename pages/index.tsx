@@ -5,8 +5,15 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import Post from "../components/Post";
 import styles from "../styles/Home.module.css";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
+  const [postData, setPostData] = useState<any>([]);
+  useEffect(() => {
+    fetch("/api/posts")
+      .then((res) => res.json())
+      .then((data) => setPostData(data));
+  }, []);
   return (
     <div className="w-screen flex flex-col items-center justify-center">
       <Head>
@@ -20,34 +27,15 @@ const Home: NextPage = () => {
       </Head>
       <NavBar />
       <main className="w-[90vw] md:w-[800px] flex flex-row flex-wrap justify-center items-center mt-10 gap-10 mb-[100px]">
-        <Post
-          firstPost={true}
-          banner={
-            "https://res.cloudinary.com/demo/image/fetch/https://pbs.twimg.com/profile_images/1452637606559326217/GFz_P-5e_400x400.png"
-          }
-          title={"Integrating MongoDB With NextJS"}
-          description={
-            "In this blog, I write about how I integrated MongoDB inside my chat application made using NextJS."
-          }
-        />
-        <Post
-          banner={
-            "https://res.cloudinary.com/demo/image/fetch/https://firebase.google.com/images/brand-guidelines/logo-logomark.png"
-          }
-          title={"Integrating Firebase With NextJS"}
-          description={
-            "In this blog, I write about how I integrated Firebase inside my chat application made using NextJS."
-          }
-        />
-        <Post
-          banner={
-            "https://res.cloudinary.com/demo/image/fetch/https://avatars.githubusercontent.com/u/739550?s=200&v=4"
-          }
-          title={"Integrating Pusher With NextJS"}
-          description={
-            "In this blog, I write about how I integrated Pusher inside my chat application made using NextJS."
-          }
-        />
+        {postData.map((post:any, index:number) => {
+          return <Post
+            banner={post.banner}
+            title={post.title}
+            description={post.description}
+            key={index}
+            firstPost={index === 0}
+          />;
+        })}
       </main>
       <Footer />
     </div>

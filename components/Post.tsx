@@ -35,7 +35,7 @@ export default function Post({
       </div>
     </div>
   ) : (
-    <div className="post-main-container w-[full] md:w-[40%] h-fit md:h-[300px] flex flex-col border-[.1px] border-black p-5 md:p-0 transition-all duration-200 hover-shadow items-center justify-center">
+    <div className="post-main-container w-[full] md:w-[42%] h-fit md:h-[300px] flex flex-col border-[.1px] border-black p-5 md:p-0 transition-all duration-200 hover-shadow items-center justify-center cursor-pointer">
       <div className="post-image-container w-[50vw] md:w-[100px]">
         <Image
           src={banner}

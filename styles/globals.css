@@ -19,3 +19,18 @@
 .login-box-container{
   font-family: 'Poppins';
 }
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000; 
+}
