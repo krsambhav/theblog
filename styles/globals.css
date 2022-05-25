@@ -9,3 +9,13 @@
 .hover-shadow:hover{
   box-shadow: 5px 6px;
 }
+
+.box-shadow-unhover{
+  box-shadow: 2px 2px;
+}
+.box-shadow-unhover:hover{
+  box-shadow: 0px 0px;
+}
+.login-box-container{
+  font-family: 'Poppins';
+}
